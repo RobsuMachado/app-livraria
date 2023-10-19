@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import { Alert, Image, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export default function login() {
+export default function Login() {
     const navigation = useNavigation();
     return (
         <SafeAreaView style={styles.container}>
@@ -42,7 +42,10 @@ export default function login() {
 
                 <TouchableOpacity>
                     <Text
-                        style={styles.textButton}>
+                        style={styles.textButton}
+                        onPress={() => {
+                            navigation.navigate('FeedBook');
+                        }}>
                         LOGIN
                     </Text>
                 </TouchableOpacity>
@@ -77,7 +80,7 @@ export default function login() {
                     </Text>
                     <TouchableOpacity
                         onPress={() => {
-                            navigation.navigate('createUser');
+                            navigation.navigate('CreateUser');
                         }}
                     >
                         <Text style={styles.btnCreateAccont}>
@@ -144,7 +147,7 @@ const styles = StyleSheet.create({
         color: '#FFF',
         padding: 10,
         textAlign: 'center',
-        backgroundColor: '#3F79F9b',
+        backgroundColor: '#3F79F9',
         borderTopRightRadius: 30,
         borderBottomRightRadius: 6,
         borderBottomLeftRadius: 30,
@@ -191,7 +194,7 @@ const styles = StyleSheet.create({
     btnCreateAccont: {
         fontSize: 16,
         fontWeight: '800',
-        color: '#3F79F9b',
+        color: '#3F79F9',
         textAlign: 'center',
     },
     textCreateAccont: {

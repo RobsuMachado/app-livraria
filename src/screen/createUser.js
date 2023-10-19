@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import { Alert, Image, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export default function createUser() {
+export default function CreateUser() {
     const navigation = useNavigation();
     return (
         <SafeAreaView style={styles.container}>
@@ -62,7 +62,7 @@ export default function createUser() {
                     </Text>
                     <TouchableOpacity
                         onPress={() => {
-                            navigation.navigate('login');
+                            navigation.navigate('Login');
                         }}
                     >
                         <Text style={styles.btnLoginAccont}>
