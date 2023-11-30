@@ -3,36 +3,55 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Login from "./src/screen/Login";
 import CreateUser from "./src/screen/CreateUser";
+import DrawerMenu from "./src/drawerMenu/DrawerMenu";
 import FeedBook from "./src/screen/FeedBook";
-import FetailBook from "./src/screen/DetailBook";
+import DetailBook from "./src/screen/DetailBook";
 
-const stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export default function App() {
 
   return (
     <NavigationContainer>
-      <stack.Navigator>
-
-        <stack.Screen
+      <Stack.Navigator>
+        <Stack.Screen
           name="Login"
           component={Login}
-          options={{ title: "SING IN" }}
+          options={{
+            title: "",
+            headerShown: false
+          }}
         />
 
-        <stack.Screen
+        <Stack.Screen
           name="CreateUser"
           component={CreateUser}
-          options={{ title: "SIND UP" }}
+          options={{
+            title: "",
+            headerShown: false
+          }}
         />
 
-        <stack.Screen
+        <Stack.Screen
+          name="DrawerMenu"
+          component={DrawerMenu}
+          options={{
+            title: "",
+            headerShown: false
+          }}
+        />
+
+        <Stack.Screen
           name="FeedBook"
           component={FeedBook}
-          options={{ title: "BOOK LIST" }}
+          options={{
+            title: "",
+            headerShown: false
+          }}
         />
 
-      </stack.Navigator>
+
+      </Stack.Navigator>
     </NavigationContainer>
   )
 };

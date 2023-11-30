@@ -2,11 +2,17 @@ import { useNavigation } from '@react-navigation/native';
 import { Alert, Image, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export default function Book({titulo, autor, valorPromo, valor, desc}) {
+export default function Book({ titulo, autor, valorPromo, valor, desc, imagem }) {
     const navigation = useNavigation();
     return (
         <View style={styles.panelBook}>
-            <View style={styles.imageBook}></View>
+            <View>
+                <Image
+                        style={styles.imageBook}
+                        source={imagem}
+                    />
+            </View>
+
             <View style={styles.describeBook}>
                 <Text style={styles.titleBook}>{titulo}</Text>
                 <Text style={styles.authorBook}>{autor}</Text>
@@ -34,13 +40,14 @@ export default function Book({titulo, autor, valorPromo, valor, desc}) {
 const styles = StyleSheet.create({
     panelBook: {
         flexDirection: 'row',
+        width: '100%',
         height: 180,
         borderTopRightRadius: 40,
         borderBottomRightRadius: 10,
         borderBottomLeftRadius: 40,
         borderTopLeftRadius: 10,
         backgroundColor: '#fff',
-        shadowColor: '#000',
+        shadowColor: '#333',
         shadowOffset: {
             width: 0,
             height: 2
@@ -51,12 +58,13 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     imageBook: {
+        flex: 1,
         width: 120,
         height: '100%',
         borderBottomLeftRadius: 40,
         borderTopLeftRadius: 10,
         backgroundColor: '#00b2ff',
-        shadowColor: '#000',
+        shadowColor: '#333',
         shadowOffset: {
             width: 10,
             height: 2
@@ -66,8 +74,11 @@ const styles = StyleSheet.create({
         elevation: 10,
     },
     describeBook: {
-        marginLeft: '5%',
-        marginTop: '3%',
+        flex: 1,
+        width:'100%',
+        height:'100%',
+        paddingHorizontal: '5%',
+        paddingTop: '3%',
         flexDirection: 'column',
     },
     titleBook: {
@@ -109,7 +120,6 @@ const styles = StyleSheet.create({
         marginBottom: 0,
     },
     textButton: {
-        marginHorizontal: '2%',
         fontSize: 16,
         fontWeight: '800',
         color: '#FFF',
@@ -121,5 +131,14 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 6,
         borderBottomLeftRadius: 30,
         borderTopLeftRadius: 6,
+        shadowColor: '#333',
+        shadowOffset: {
+            width: 0,
+            height: 2
+        },
+        shadowOpacity: 1,
+        shadowRadius: 0,
+        elevation: 10,
+        marginBottom: 10,
     },
 });

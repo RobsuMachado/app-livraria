@@ -1,11 +1,12 @@
 import { useNavigation } from '@react-navigation/native';
 import { Alert, Image, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Book from '../components/book';
+import Book from '../components/Book';
 
 const moldeBook = [
-    { titulo: '1', autor: '1', valorPromo: '1', valor: '1', desc: '1' },
-    { titulo: '2', autor: '2', valorPromo: '2', valor: '2', desc: '2' }
+    { imagem: require('../image/teslaBookFace.jpg'), titulo: 'Tesla: A vida e a lou...', autor: 'Robson', valorPromo: '1', valor: '1', desc: '1' },
+    { titulo: 'Victor', autor: '2', valorPromo: '2', valor: '2', desc: '2' },
+    { titulo: 'Victoabcccc', autor: '2', valorPromo: '2', valor: '2', desc: '2' }
 ]
 
 export default function FeedBook() {
@@ -15,6 +16,7 @@ export default function FeedBook() {
             {moldeBook.map((data, index) => (
                 <Book
                     key={index}
+                    imagem={data.imagem}
                     titulo={data.titulo}
                     autor={data.autor}
                     valorPromo={data.valorPromo}

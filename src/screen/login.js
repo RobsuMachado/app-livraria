@@ -44,7 +44,8 @@ export default function Login() {
                     <Text
                         style={styles.textButton}
                         onPress={() => {
-                            navigation.navigate('FeedBook');
+                            // navigation.navigate('FeedBook');
+                            navigation.navigate('DrawerMenu');
                         }}>
                         LOGIN
                     </Text>
